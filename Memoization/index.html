@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memoization</title>
+  </head>
+  <body>
+    <h1>Memoization</h1>
+    <pre>
+ 
+        Memoization is an optimization technique that stores the results of expensive function calls and returns the cached result when the same inputs occur again.</pre
+    >
+    <pre>
+const add = (x) => {
+        return x + 10;
+      };
+      
+      const memo = (func) => {
+        let cache = {};
+        return function (x) {
+          if (cache[x]) {
+            console.log(`return result from cache`);
+            return cache[x];
+          } else {
+            console.log("calculating the result ");
+            const result = func(x);
+            cache[x] = result;
+            return result;
+          }
+        };
+      };
+      
+      const calculate = memo(add);
+      
+      console.log(calculate(5));
+      console.log(calculate(5));
+      console.log(calculate(5));
+      console.log(calculate(50));</pre
+    >
+    <script src="script.js"></script>
+  </body>
+</html>

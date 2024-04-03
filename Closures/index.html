@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Closure</title>
+  </head>
+  <body>
+    <h1>Closures</h1>
+    <pre>
+    A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). 
+    In other words, a closure gives you access to an outer function's scope from an inner function.
+    This ability of a function to store a variable for further reference even after it is executed is called closure.
+    </pre>
+    <pre>
+const outer = () => {
+      const age = "24";
+      const inner = () => {
+        const name = "babu";
+        console.log(name, age);
+      };
+      return inner;
+    };
+    
+    const result = outer();
+    result();</pre
+    >
+    <script src="script.js"></script>
+  </body>
+</html>
